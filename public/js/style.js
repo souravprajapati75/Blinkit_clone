@@ -22,11 +22,11 @@ window.onload = function() {
         if(mobDisp) mobDisp.innerText = userData.mobile;
     }
     
-    // Products hamesha load karo
+    // Products load
     loadProducts();
 };
 
-// --- 2. DATABASE SE PRODUCTS LOAD KARNA ---
+// --- 2. databse to products---
 async function loadProducts() {
     try {
         const response = await fetch('/api/products');
@@ -65,7 +65,7 @@ function updateQuantity(productId, change) {
     renderProducts(products);
 }
 
-// [IMPORTANT] Sabse zaruri function jo Total dikhata hai
+// [IMPORTANT] total function
 function updateCartUI() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -219,7 +219,7 @@ if(accountBtn) {
     };
 }
 
-// Window click par dropdown band ho jaye
+// after clik the window dreop down shut
 window.onclick = function() {
     const dropdown = document.getElementById('myDropdown');
     if (dropdown && dropdown.classList.contains('show')) {
