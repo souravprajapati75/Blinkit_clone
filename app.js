@@ -18,10 +18,10 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
     if (err) {
-        console.error('❌ Database connection fail:', err);
+        console.error('('.') Database connection fail:', err);
         return;
     }
-    console.log('✅ MySQL Connected (blinkit_db)!');
+    console.log(' MySQL Connected (blinkit_db)!');
 });
 
 // 1. Home Page
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-// 2. Products API (Database se 100 products lane ke liye)
+// 2. Products API (for 100+ data comes
 app.get('/api/products', (req, res) => {
     const sql = "SELECT * FROM products";
     db.query(sql, (err, results) => {
